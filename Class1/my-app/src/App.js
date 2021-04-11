@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import Saludo from './Saludo';
+import './App.css'
+import  ButtonCl from './ButtonCL/ButtonCl'
+import { PureComponent } from 'react'
 
+// componente contenedor
 function App() {
   return (
-    <div className="App">
+      <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Saludo/>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <ButtonCl text={'Soy el puto Nueno btn'} color={'red'} />
       </header>
     </div>
   );
 }
 
 export default App;
+ 
