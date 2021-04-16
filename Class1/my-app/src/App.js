@@ -1,16 +1,19 @@
 import './App.css'
-import  ButtonCl from './ButtonCL/ButtonCl'
-import { PureComponent } from 'react'
+import NavBar from './Components/Navbar'
+import ItemListContainer from './Container/ItemListContainer'
 
 // componente contenedor
 function App() {
   return (
-      <div className="App">
-      <header className="App-header">
-        <ButtonCl text={'Soy el puto Nueno btn'} color={'red'} />
-      </header>
+    <div className="App">
+      <NavBar/>
+      <ItemListContainer greeting="Coders"/>
     </div>
   );
+  // return <>
+  //   <NavBar/>
+  //   <ItemListContainer/>
+  // </>
 }
 
 export default App;
