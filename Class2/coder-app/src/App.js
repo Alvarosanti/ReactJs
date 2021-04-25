@@ -1,14 +1,13 @@
 import React from 'react'
-import { ItemListContainer } from './components/ItemListContainer'
-
 import { NavBar } from './components/NavBar'
+import Catalogo  from '../src/container/ItemListContainer'
+
 
 export const App = () => {
-  const saludo = 'Bienvenidos a nuestra tienda online'
   return (
     <div>
       <NavBar/>
-      <ItemListContainer greeting={saludo} />
+      <Catalogo/>
     </div>
   );
 }
