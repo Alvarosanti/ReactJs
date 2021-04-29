@@ -12,6 +12,7 @@ const Catalogo = () =>{
                     tittle: 'Lampara vintage 1',
                     description: 'Lampara para todo ambiente',
                     price: 30,
+                    stockQ:10,
                     pictures:"./assets/lamps/lamp1.png"
                 },
                 {
@@ -19,6 +20,7 @@ const Catalogo = () =>{
                     tittle: 'Lampara vintage 2',
                     description: 'Lampara para dormitorio',
                     price: 30,
+                    stockQ:10,
                     pictures:"./assets/lamps/lamp2.png"
                 },
                 {
@@ -26,76 +28,47 @@ const Catalogo = () =>{
                     tittle: 'Lampara vintage 3',
                     description: 'Lampara para dormitorio',
                     price: 30,
+                    stockQ:10,
                     pictures:"./assets/lamps/lamp2.png"
                 },
                 {
-                    id: 3,
+                    id: 4,
                     tittle: 'Lampara vintage 3',
                     description: 'Lampara para dormitorio',
                     price: 30,
+                    stockQ:10,
                     pictures:"./assets/lamps/lamp2.png"
                 },
                 {
-                    id: 3,
+                    id: 5,
                     tittle: 'Lampara vintage 3',
                     description: 'Lampara para dormitorio',
                     price: 30,
+                    stockQ:10,
                     pictures:"./assets/lamps/lamp2.png"
                 },
                 {
-                    id: 3,
+                    id: 6,
                     tittle: 'Lampara vintage 3',
                     description: 'Lampara para dormitorio',
                     price: 30,
+                    stockQ:10,
                     pictures:"./assets/lamps/lamp2.png"
                 },
                 {
-                    id: 3,
+                    id: 7,
                     tittle: 'Lampara vintage 3',
                     description: 'Lampara para dormitorio',
                     price: 30,
+                    stockQ:10,
                     pictures:"./assets/lamps/lamp2.png"
                 },
                 {
-                    id: 3,
+                    id: 8,
                     tittle: 'Lampara vintage 3',
                     description: 'Lampara para dormitorio',
                     price: 30,
-                    pictures:"./assets/lamps/lamp2.png"
-                },
-                {
-                    id: 3,
-                    tittle: 'Lampara vintage 3',
-                    description: 'Lampara para dormitorio',
-                    price: 30,
-                    pictures:"./assets/lamps/lamp2.png"
-                },
-                {
-                    id: 3,
-                    tittle: 'Lampara vintage 3',
-                    description: 'Lampara para dormitorio',
-                    price: 30,
-                    pictures:"./assets/lamps/lamp2.png"
-                },
-                {
-                    id: 3,
-                    tittle: 'Lampara vintage 3',
-                    description: 'Lampara para dormitorio',
-                    price: 30,
-                    pictures:"./assets/lamps/lamp2.png"
-                },
-                {
-                    id: 3,
-                    tittle: 'Lampara vintage 3',
-                    description: 'Lampara para dormitorio',
-                    price: 30,
-                    pictures:"./assets/lamps/lamp2.png"
-                },
-                {
-                    id: 3,
-                    tittle: 'Lampara vintage 3',
-                    description: 'Lampara para dormitorio',
-                    price: 30,
+                    stockQ:10,
                     pictures:"./assets/lamps/lamp2.png"
                 }
             ];
@@ -115,14 +88,13 @@ const Catalogo = () =>{
     },[])
     return(
         <>
-            {/* {data.length > 0    ? <ItemList productos={data} /> : <img src={catalogo} } */}
             <div className="container">
                 <div className="row">    
-                     <ItemList productos={data} />
+                <ItemList productos={data}/>
               </div>
           </div>
-
         </>
     )
 }
+
 export default Catalogo;

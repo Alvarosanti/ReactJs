@@ -10,9 +10,9 @@ const ItemList = ({productos}) =>{
          </div>
             {
                 productos.map((data)=>
-                            <div id = {data.id} className="col-lg-3 shop-info-grid mt-4">
-                                <Item  tittle = {data.tittle} description = {data.description} price = {data.price} picture={data.pictures}/>
-                            </div>
+                    <div id = {data.id} className="col-lg-3 shop-info-grid mt-4">
+                        <Item  tittle = {data.tittle} description = {data.description} price = {data.price} stockQ = {data.stockQ}/>
+                    </div>
             )}
         </>
     )

@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavBar } from './components/NavBar'
 import Catalogo  from '../src/container/ItemListContainer'
-
+import Footer from './components/Footer'
 
 
 export const App = () => {
@@ -9,6 +9,7 @@ export const App = () => {
     <div>
       <NavBar/>
       <Catalogo/>
+      <Footer/>
     </div>
   );
 }
