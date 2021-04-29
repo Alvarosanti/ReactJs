@@ -3,22 +3,100 @@ import ItemList from './ItemList';
 
 const Catalogo = () =>{
     const[data,setData] = useState([]);
+
     useEffect(()=>{
         const prom = new Promise((resolve,reject)=>{
             const catalogo = [
                 {
                     id: 1,
-                    tittle: 'Lampara vintage',
+                    tittle: 'Lampara vintage 1',
                     description: 'Lampara para todo ambiente',
                     price: 30,
-                    pictureUrl:'../assets/lamps/lamp1'
+                    pictures:"./assets/lamps/lamp1.png"
                 },
                 {
                     id: 2,
-                    tittle: 'Lampara vintage',
-                    description: 'Lampara para todo ambiente',
+                    tittle: 'Lampara vintage 2',
+                    description: 'Lampara para dormitorio',
                     price: 30,
-                    pictureUrl:'../assets/lamps/lamp2'
+                    pictures:"./assets/lamps/lamp2.png"
+                },
+                {
+                    id: 3,
+                    tittle: 'Lampara vintage 3',
+                    description: 'Lampara para dormitorio',
+                    price: 30,
+                    pictures:"./assets/lamps/lamp2.png"
+                },
+                {
+                    id: 3,
+                    tittle: 'Lampara vintage 3',
+                    description: 'Lampara para dormitorio',
+                    price: 30,
+                    pictures:"./assets/lamps/lamp2.png"
+                },
+                {
+                    id: 3,
+                    tittle: 'Lampara vintage 3',
+                    description: 'Lampara para dormitorio',
+                    price: 30,
+                    pictures:"./assets/lamps/lamp2.png"
+                },
+                {
+                    id: 3,
+                    tittle: 'Lampara vintage 3',
+                    description: 'Lampara para dormitorio',
+                    price: 30,
+                    pictures:"./assets/lamps/lamp2.png"
+                },
+                {
+                    id: 3,
+                    tittle: 'Lampara vintage 3',
+                    description: 'Lampara para dormitorio',
+                    price: 30,
+                    pictures:"./assets/lamps/lamp2.png"
+                },
+                {
+                    id: 3,
+                    tittle: 'Lampara vintage 3',
+                    description: 'Lampara para dormitorio',
+                    price: 30,
+                    pictures:"./assets/lamps/lamp2.png"
+                },
+                {
+                    id: 3,
+                    tittle: 'Lampara vintage 3',
+                    description: 'Lampara para dormitorio',
+                    price: 30,
+                    pictures:"./assets/lamps/lamp2.png"
+                },
+                {
+                    id: 3,
+                    tittle: 'Lampara vintage 3',
+                    description: 'Lampara para dormitorio',
+                    price: 30,
+                    pictures:"./assets/lamps/lamp2.png"
+                },
+                {
+                    id: 3,
+                    tittle: 'Lampara vintage 3',
+                    description: 'Lampara para dormitorio',
+                    price: 30,
+                    pictures:"./assets/lamps/lamp2.png"
+                },
+                {
+                    id: 3,
+                    tittle: 'Lampara vintage 3',
+                    description: 'Lampara para dormitorio',
+                    price: 30,
+                    pictures:"./assets/lamps/lamp2.png"
+                },
+                {
+                    id: 3,
+                    tittle: 'Lampara vintage 3',
+                    description: 'Lampara para dormitorio',
+                    price: 30,
+                    pictures:"./assets/lamps/lamp2.png"
                 }
             ];
             setTimeout(()=>{
@@ -36,10 +114,15 @@ const Catalogo = () =>{
         })
     },[])
     return(
-        <div>
+        <>
             {/* {data.length > 0    ? <ItemList productos={data} /> : <img src={catalogo} } */}
-            <ItemList productos={data} />
-        </div>
+            <div className="container">
+                <div className="row">    
+                     <ItemList productos={data} />
+              </div>
+          </div>
+
+        </>
     )
 }
 export default Catalogo;
