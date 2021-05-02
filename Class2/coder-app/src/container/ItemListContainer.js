@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import ItemList from './ItemList';
+import ItemDetailContainer from './ItemDetailContainer'
 
 const Catalogo = () =>{
     const[data,setData] = useState([]);
@@ -91,6 +92,7 @@ const Catalogo = () =>{
             <div className="container">
                 <div className="row">    
                 <ItemList productos={data}/>
+                <ItemDetailContainer productos={data}/>
               </div>
           </div>
         </>

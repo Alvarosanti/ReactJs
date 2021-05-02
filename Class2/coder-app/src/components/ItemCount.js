@@ -17,9 +17,9 @@ const ItemCount = ({items,stockQ}) => {
         <div>
             <div>
                 <div class="def-number-input number-input safari_only mb-0 w-100">
-                    <button onClick={restar} disabled = {item === 0}  class="minus decrease">-</button>
-                    <span  type="number">{item}</span>
-                    <button onClick={sumar} disabled = {item === stockQ} class="plus increase">+</button>
+                    <button className="btn btn-secondary btn-sm rounded-circle" onClick={restar} disabled = {item === 0}>&nbsp;-&nbsp;</button>
+                    <span  type="number"> {item} </span>
+                    <button className="btn btn-secondary btn-sm rounded-circle" onClick={sumar} disabled = {item === stockQ}>+&nbsp;</button>
                 </div>
                 <small id="passwordHelpBlock" class="form-text text-muted text-center">
                     (Nota, precio x unidad)
