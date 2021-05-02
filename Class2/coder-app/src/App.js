@@ -17,11 +17,11 @@ export const App = () => {
           <Route path='/home'>
             <Home/>
           </Route>
+          <Route  path='/item/:id'>
+            <ItemDetalle/>
+          </Route>
           <Route exact path='/catalogo'>
             <Catalogo/>
-          </Route>
-          <Route exact path='/catalogo/:idx'>
-            <ItemDetalle/>
           </Route>
           <Route path='/'>
             <Home/>

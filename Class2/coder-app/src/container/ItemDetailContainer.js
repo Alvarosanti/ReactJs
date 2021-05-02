@@ -7,8 +7,8 @@ export default function ItemDetalle() {
         <div>
             DETALLE DEL PRODUCTO: ${idx}!
             <section className="mb-5">
-                <div classNameName="row">
-                    <div classNameName="col-md-6 mb-4 mb-md-0">
+                <div className="row">
+                    <div className="col-md-6 mb-4 mb-md-0">
                         <div id="mdb-lightbox-ui"></div>
                         <div className="mdb-lightbox">
                             <div className="row product-gallery mx-1">
@@ -79,11 +79,9 @@ export default function ItemDetalle() {
                             <tr>
                             <td className="pl-0">
                                 <div className="def-number-input number-input safari_only mb-0">
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                    className="minus"></button>
+                                <button  className="minus"></button>
                                 <input className="quantity" min="0" name="quantity" value="1" type="number"/>
-                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                    className="plus"></button>
+                                <button className="plus"></button>
                                 </div>
                             </td>
                             <td>
