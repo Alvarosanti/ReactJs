@@ -1,122 +1,108 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, {useState,useEffect} from 'react'
+import Detail from './Detail'
+import { useParams } from 'react-router-dom';
 
-export default function ItemDetalle() {
-    const { idx } = useParams(); 
+const ItemDetailContainer = () => {
+    
+    const[dataSet,setData] = useState({});
+    const {id} = useParams(); 
+    console.log('id prop idetailcontainer: ',id);
+    useEffect(()=>{
+
+        const getItem = () =>{
+            return new Promise((resolve,reject)=>{
+                const catalogo = [
+                    {
+                        id: 1,
+                        tittle: 'Lampara vintage 1',
+                        description: 'Lampara para todo ambiente',
+                        price: 59.99,
+                        stockQ: 50,
+                        pictures:"./assets/lamps/lamp1.png"
+                    },
+                    {
+                        id: 2,
+                        tittle: 'Lampara vintage 2',
+                        description: 'Lampara para dormitorio',
+                        price: 49.99,
+                        stockQ: 42,
+                        pictures:"./assets/lamps/lamp2.png"
+                    },
+                    {
+                        id: 3,
+                        tittle: 'Lampara vintage 3',
+                        description: 'Lampara para salon',
+                        price: 89.99,
+                        stockQ: 26,
+                        pictures:"./assets/lamps/lamp2.png"
+                    },
+                    {
+                        id: 4,
+                        tittle: 'Lampara vintage 4',
+                        description: 'Lampara para terraza',
+                        price: 69.99,
+                        stockQ: 34,
+                        pictures:"./assets/lamps/lamp2.png"
+                    },
+                    {
+                        id: 5,
+                        tittle: 'Lampara vintage 5',
+                        description: 'Lampara para garage',
+                        price: 29.99,
+                        stockQ: 47,
+                        pictures:"./assets/lamps/lamp2.png"
+                    },
+                    {
+                        id: 6,
+                        tittle: 'Lampara vintage 6',
+                        description: 'Lampara para comedor',
+                        price: 39.99,
+                        stockQ: 12,
+                        pictures:"./assets/lamps/lamp2.png"
+                    },
+                    {
+                        id: 7,
+                        tittle: 'Lampara vintage 7',
+                        description: 'Lampara para baño',
+                        price: 19.99,
+                        stockQ: 29,
+                        pictures:"./assets/lamps/lamp2.png"
+                    },
+                    {
+                        id: 8,
+                        tittle: 'Lampara vintage 3',
+                        description: 'Lampara para dormitorio',
+                        price: 39.99,
+                        stockQ: 16,
+                        pictures:"./assets/lamps/lamp2.png"
+                    }
+                ];
+                setTimeout(()=>{
+                    resolve(catalogo);
+                },100);
+            })
+        }
+        getItem().then(dato=>{
+                const traedata = dato.filter(item => item.id == `${id}`)
+                console.log('data filtrada',traedata)
+                setData(traedata[0]);
+            })
+        },[])
+        
+        console.log('data IDContainer',dataSet[0]);
+        console.log('data IDContainer 2',dataSet );
+    
     return (
-        <div>
-            DETALLE DEL PRODUCTO: ${idx}!
-            <section className="mb-5">
-                <div className="row">
-                    <div className="col-md-6 mb-4 mb-md-0">
-                        <div id="mdb-lightbox-ui"></div>
-                        <div className="mdb-lightbox">
-                            <div className="row product-gallery mx-1">
-                            <div className="col-12 mb-0">
-                                <div className="col-3">
-                                    <div className="view overlay rounded z-depth-1 gallery-item">
-                                        <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg"
-                                            className="img-fluid"/>
-                                        <div className="mask rgba-white-slight"></div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
+        <>
+           {
+                <div className="col-lg-6 shop-info-grid mt-5">
+                    <div className="row">    
+                    <Detail detalle = {dataSet} />
                     </div>
                 </div>
-                <div className="col-md-6">
-                    
-                    <h5>Fantasy T-shirt</h5>
-                    <p className="mb-2 text-muted text-uppercase small">Shirts</p>
-                    <ul className="rating">
-                        <li>
-                        <i className="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li>
-                        <i className="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li>
-                        <i className="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li>
-                        <i className="fas fa-star fa-sm text-primary"></i>
-                        </li>
-                        <li>
-                        <i className="far fa-star fa-sm text-primary"></i>
-                        </li>
-                    </ul>
-                    <p><span className="mr-1"><strong>$12.99</strong></span></p>
-                    <p className="pt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit
-                        error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio,
-                        officia quis dolore quos sapiente tempore alias.</p>
-                    <div className="table-responsive">
-                        <table className="table table-sm table-borderless mb-0">
-                            <tbody>
-                                <tr>
-                                <th className="pl-0 w-25" scope="row"><strong>Model</strong></th>
-                                <td>Shirt 5407X</td>
-                                </tr>
-                                <tr>
-                                <th className="pl-0 w-25" scope="row"><strong>Color</strong></th>
-                                <td>Black</td>
-                                </tr>
-                                <tr>
-                                <th className="pl-0 w-25" scope="row"><strong>Delivery</strong></th>
-                                <td>USA, Europe</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <hr/>
-                    <div className="table-responsive mb-2">
-                        <table className="table table-sm table-borderless">
-                        <tbody>
-                            <tr>
-                            <td className="pl-0 pb-0 w-25">Quantity</td>
-                            <td className="pb-0">Select size</td>
-                            </tr>
-                            <tr>
-                            <td className="pl-0">
-                                <div className="def-number-input number-input safari_only mb-0">
-                                <button  className="minus"></button>
-                                <input className="quantity" min="0" name="quantity" value="1" type="number"/>
-                                <button className="plus"></button>
-                                </div>
-                            </td>
-                            <td>
-                                <div className="mt-1">
-                                <div className="form-check form-check-inline pl-0">
-                                    <input type="radio" className="form-check-input" id="small" name="materialExampleRadios"
-                                    checked/>
-                                    <label className="form-check-label small text-uppercase card-link-secondary"
-                                    for="small">Small</label>
-                                </div>
-                                <div className="form-check form-check-inline pl-0">
-                                    <input type="radio" className="form-check-input" id="medium" name="materialExampleRadios"/>
-                                    <label className="form-check-label small text-uppercase card-link-secondary"
-                                    for="medium">Medium</label>
-                                </div>
-                                <div className="form-check form-check-inline pl-0">
-                                    <input type="radio" className="form-check-input" id="large" name="materialExampleRadios"/>
-                                    <label className="form-check-label small text-uppercase card-link-secondary"
-                                    for="large">Large</label>
-                                </div>
-                                </div>
-                            </td>
-                            </tr>
-                        </tbody>
-                        </table>
-                    </div>
-                    <button type="button" className="btn btn-primary btn-md mr-1 mb-2">Buy now</button>
-                    <button type="button" className="btn btn-light btn-md mr-1 mb-2"><i
-                        className="fas fa-shopping-cart pr-2"></i>Add to cart</button>
-                    </div>
-            </section>
-        </div>
-
-
-
-
+            }
+       </>
     )
 }
+
+export default ItemDetailContainer

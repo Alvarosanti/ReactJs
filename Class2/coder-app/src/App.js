@@ -1,10 +1,10 @@
 import React from 'react'
 import { NavBar } from './components/NavBar'
-import Catalogo  from '../src/container/ItemListContainer'
+import ItemListContainer  from '../src/container/ItemListContainer'
 import Footer from './components/Footer'
 import './App.css'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import ItemDetalle from './container/ItemDetailContainer';
+import ItemDetailContainer from './container/ItemDetailContainer';
 import Home from './components/Home'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 
@@ -18,10 +18,10 @@ export const App = () => {
             <Home/>
           </Route>
           <Route  path='/item/:id'>
-            <ItemDetalle/>
+            <ItemDetailContainer/>
           </Route>
-          <Route exact path='/catalogo'>
-            <Catalogo/>
+          <Route  path='/catalogo'>
+            <ItemListContainer/>
           </Route>
           <Route path='/'>
             <Home/>

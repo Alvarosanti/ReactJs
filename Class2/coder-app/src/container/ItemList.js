@@ -1,6 +1,6 @@
 import React from 'react';
 import Item from './Item';
-import { Link } from 'react-router-dom';
+
 
 const ItemList = ({productos}) =>{
     return(
@@ -9,11 +9,9 @@ const ItemList = ({productos}) =>{
             <h1>Catalogo</h1>
          </div>
             {
-                productos.map((data,id)=>
+                productos.map((data)=>
                     <div key = {data.id} className="col-lg-3 shop-info-grid mt-5">
-                        <Link key={id} to={`item/${id}`}>
-                        <Item  tittle = {data.tittle} description = {data.description} price = {data.price} stockQ = {data.stockQ}/>
-                        </Link>
+                        <Item id={data.id} tittle = {data.tittle} description = {data.description} price = {data.price} stockQ = {data.stockQ}/>
                     </div>
             )}
         </>
