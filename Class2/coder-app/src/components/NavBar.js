@@ -25,11 +25,11 @@ export const NavBar = () => {
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">Dormitorio</Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">Salon</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Terrazas</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Comedor</Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">Baño</Dropdown.Item>
+                            <Dropdown.Item href="/category">Dormitorio</Dropdown.Item>
+                            <Dropdown.Item href="/category">Salon</Dropdown.Item>
+                            <Dropdown.Item href="/category">Terrazas</Dropdown.Item>
+                            <Dropdown.Item href="/category">Comedor</Dropdown.Item>
+                            <Dropdown.Item href="/category">Baño</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
 
