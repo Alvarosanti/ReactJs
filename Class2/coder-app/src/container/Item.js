@@ -9,7 +9,7 @@ const Item = ({id,tittle,description,price,stockQ,items}) =>{
             <div className="card"> 
                 <div className="card-body">
                     <h4 className="card-tittle">{tittle}</h4>
-                    <img className="card-img-top" src={img}></img>
+                    <img className="card-img-top" src={img} alt="imagenmodel"></img>
                     <p className="card-text text-bg-primary">{description}</p>
                     <p className="card-text text-secondary">Stock: {stockQ} unidades</p>
                     <p className="card-text">Precio: {price} USD</p>

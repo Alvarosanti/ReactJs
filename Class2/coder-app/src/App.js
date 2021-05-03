@@ -7,6 +7,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import ItemDetailContainer from './container/ItemDetailContainer';
 import Home from './components/Home'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const App = () => {
   return (

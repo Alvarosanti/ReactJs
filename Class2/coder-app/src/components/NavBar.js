@@ -1,5 +1,6 @@
 import React from 'react'
 import { CartWidget } from './CartWidget.js'
+import { Dropdown } from 'react-bootstrap';
 
 export const NavBar = () => {
     return(
@@ -17,6 +18,21 @@ export const NavBar = () => {
                     <li className="nav-item">
                         <a className="nav-link" href="/catalogo">Catalogo</a>
                     </li>
+                   
+                    <Dropdown>
+                        <Dropdown.Toggle variant="" id="">
+                            Categorias
+                        </Dropdown.Toggle>
+
+                        <Dropdown.Menu>
+                            <Dropdown.Item href="#/action-1">Dormitorio</Dropdown.Item>
+                            <Dropdown.Item href="#/action-2">Salon</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Terrazas</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Comedor</Dropdown.Item>
+                            <Dropdown.Item href="#/action-3">Baño</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+
                     {/* <li className="nav-item">
                         <a className="nav-link disabled" href="/" tabIndex="-1" aria-disabled="true">Disabled</a>
                     </li> */}
@@ -24,6 +40,7 @@ export const NavBar = () => {
                 </div>
                     <CartWidget/>
             </nav>
+            
       </>
     )
 }
