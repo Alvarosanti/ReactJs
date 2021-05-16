@@ -13,11 +13,11 @@ const Item = ({id,tittle,description,price,stockQ,items}) =>{
                     <p className="card-text text-bg-primary">{description}</p>
                     <p className="card-text text-secondary">Stock: {stockQ} unidades</p>
                     <p className="card-text">Precio: {price} USD</p>
-                    <ItemCount items= {items} stockQ = {stockQ}/>
-                    <button className="btn btn-outline-warning rounded-pill">Agregar al carrito</button>
-                        <Link  to={`/item/${id}`}>
-                            <button className="btn btn-outline-alert-info">Detalles</button>
-                        </Link>
+                    {/* <ItemCount items= {items} stockQ = {stockQ}/> */}
+                    {/* <button className="btn btn-outline-warning rounded-pill">Agregar al carrito</button> */}
+                    <Link  to={`/item/${id}`}>
+                        <button className="btn btn-outline-warning rounded-pill">Detalles</button>
+                    </Link>
                 </div>
             </div>
     )

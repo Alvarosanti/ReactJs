@@ -1,14 +1,15 @@
 import React, {useState,useEffect} from 'react'
 import Detail from './Detail'
 import { useParams } from 'react-router-dom';
+import { useCartContext} from '../components/CartContext'
 
 const ItemDetailContainer = () => {
     
     const[dataSet,setData] = useState({});
     const {id} = useParams(); 
+    const {addItems,items} = useCartContext;
     console.log('id prop idetailcontainer: ',id);
     useEffect(()=>{
-
         const getItem = () =>{
             return new Promise((resolve,reject)=>{
                 const catalogo = [
@@ -88,9 +89,13 @@ const ItemDetailContainer = () => {
                 setData(traedata[0]);
             })
         },[])
-        
         console.log('data IDContainer',dataSet[0]);
         console.log('data IDContainer 2',dataSet );
+        const onAdd = (count) => {
+            addItems(count,dataSet[0])
+
+        }
+
     
     return (
         <>

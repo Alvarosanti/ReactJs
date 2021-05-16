@@ -19,7 +19,7 @@ const ItemCount = ({items,stockQ}) => {
                     <span  type="number"> {item} </span>
                     <button className="btn btn-secondary btn-sm rounded-circle" onClick={sumar} disabled = {item === stockQ}>+&nbsp;</button>
                 </div>
-                <small id="passwordHelpBlock" className="form-text text-muted text-center">
+                <small id="passwordHelpBlock" className="form-text text-muted text-left">
                     (Nota, precio x unidad)
                 </small>
             </div>
