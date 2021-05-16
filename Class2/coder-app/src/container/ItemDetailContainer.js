@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react'
+import React, {useState,useEffect,useContext} from 'react'
 import Detail from './Detail'
 import { useParams } from 'react-router-dom';
 import { useCartContext} from '../components/CartContext'
@@ -89,10 +89,9 @@ const ItemDetailContainer = () => {
                 setData(traedata[0]);
             })
         },[])
-        console.log('data IDContainer',dataSet[0]);
-        console.log('data IDContainer 2',dataSet );
+       
         const onAdd = (count) => {
-            addItems(count,dataSet[0])
+            addItems(count,dataSet)
 
         }
 
@@ -102,7 +101,7 @@ const ItemDetailContainer = () => {
            {
                 <div className="col-lg-6 shop-info-grid mt-5">
                     <div className="row">    
-                    <Detail detalle = {dataSet} />
+                    <Detail onAdd={onAdd} detalle = {dataSet} />
                     </div>
                 </div>
             }

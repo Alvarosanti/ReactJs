@@ -1,7 +1,7 @@
 import React from 'react'
 import img from '../assets/lamps/lamp1.png'
 import ItemCount from '../components/ItemCount'
-const Detail = ({detalle,items}) => {
+const Detail = ({detalle,items,onAdd}) => {
     console.log('datadetailin detail: ', detalle.id);
 
     return (
@@ -12,7 +12,9 @@ const Detail = ({detalle,items}) => {
             <p>Stock: {detalle.stockQ} unidades</p>
             <p>Precio: {detalle.price} USD</p>
             <ItemCount items= {detalle.items} stockQ = {detalle.stockQ}/>
-            <button className="btn btn-outline-warning rounded-pill">Agregar al carrito</button>
+            {/* <link to='/cart'> 
+                <button onAdd={onAdd} className="btn btn-outline-warning rounded-pill">Comprar</button>
+            </link> */}
         </div>
     )
 }
