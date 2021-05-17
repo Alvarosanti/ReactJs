@@ -6,6 +6,7 @@ import './App.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import ItemDetailContainer from './container/ItemDetailContainer';
 import Home from './components/Home';
+import Cart from './components/Cart';
 import {CartContext1} from './components/CartContext';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -26,6 +27,9 @@ export const App = () => {
             </Route>
             <Route  path='/catalogo'>
               <ItemListContainer/>
+            </Route>
+            <Route  path='/cart'>
+              <Cart/>
             </Route>
             <Route path='/'>
               <Home/>

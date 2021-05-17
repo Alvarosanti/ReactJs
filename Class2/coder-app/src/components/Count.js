@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom';
+import { Link,Route } from 'react-router-dom';
 const ItemCount = ({items,stockQ,onAdd,userPickCount}) => {
 
     console.log('user pick count', userPickCount);
@@ -20,7 +20,7 @@ const ItemCount = ({items,stockQ,onAdd,userPickCount}) => {
             </Link>
             {/* <button onClick={()=> onAdd(userPickCount)} className="btn btn-outline-warning rounded-pill">Agregar al carrito</button> */}
 
-            <Link to='/cart'> 
+            <Link to={'/cart'}> 
                 <button onClick={()=> onAdd(userPickCount)} className="btn btn-outline-warning rounded-pill">Agregar al carrito</button>
             </Link>
         </div>
