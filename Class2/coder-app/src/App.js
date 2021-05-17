@@ -15,7 +15,6 @@ export const App = () => {
   return (
     <div style={{background: 'rgb(212, 141, 141)'}}>
    <CartContext1>
-
         <BrowserRouter>
           <NavBar/>
           <Switch>

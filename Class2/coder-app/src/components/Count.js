@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
-const ItemCount = ({items,stockQ,onAdd}) => {
+const ItemCount = ({items,stockQ,onAdd,userPickCount}) => {
 
+    console.log('user pick count', userPickCount);
     return (
         <div>
             {/* <div>
@@ -15,11 +16,12 @@ const ItemCount = ({items,stockQ,onAdd}) => {
                 </small>
             </div> */}
             <Link to='/checkout'> 
-                <button onAdd={onAdd} className="btn btn-outline-warning rounded-pill">¡Comprar ahora!</button>
+                <button className="btn btn-outline-warning rounded-pill">¡Comprar ahora!</button>
             </Link>
-            
+            {/* <button onClick={()=> onAdd(userPickCount)} className="btn btn-outline-warning rounded-pill">Agregar al carrito</button> */}
+
             <Link to='/cart'> 
-                <button onAdd={onAdd} className="btn btn-outline-warning rounded-pill">Agregar al carrito</button>
+                <button onClick={()=> onAdd(userPickCount)} className="btn btn-outline-warning rounded-pill">Agregar al carrito</button>
             </Link>
         </div>
     )

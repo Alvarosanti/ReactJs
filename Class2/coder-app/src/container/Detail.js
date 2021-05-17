@@ -1,6 +1,7 @@
 import React from 'react'
 import img from '../assets/lamps/lamp1.png'
 import ItemCount from '../components/ItemCount'
+
 const Detail = ({detalle,items,onAdd}) => {
     console.log('datadetailin detail: ', detalle.id);
 
