@@ -2,7 +2,7 @@ import React, {useState,useEffect,useContext} from 'react'
 import Detail from './Detail'
 import { useParams } from 'react-router-dom';
 import { useCartContext} from '../components/CartContext'
-
+import {Link} from 'react-router-dom';
 const ItemDetailContainer = () => {
     
     const[dataSet,setData] = useState({});
@@ -102,6 +102,7 @@ const ItemDetailContainer = () => {
                 <div className="col-lg-6 shop-info-grid mt-5">
                     <div className="row">    
                     <Detail onAdd={onAdd} detalle = {dataSet} />
+                   
                     </div>
                 </div>
             }

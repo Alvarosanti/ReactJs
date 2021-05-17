@@ -14,8 +14,12 @@ const ItemCount = ({items,stockQ,onAdd}) => {
                     (Nota, precio x unidad)
                 </small>
             </div> */}
+            <Link to='/checkout'> 
+                <button onAdd={onAdd} className="btn btn-outline-warning rounded-pill">¡Comprar ahora!</button>
+            </Link>
+            
             <Link to='/cart'> 
-                <button onAdd={onAdd} className="btn btn-outline-warning rounded-pill">Comprar</button>
+                <button onAdd={onAdd} className="btn btn-outline-warning rounded-pill">Agregar al carrito</button>
             </Link>
         </div>
     )

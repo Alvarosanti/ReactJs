@@ -9,9 +9,9 @@ const Detail = ({detalle,items,onAdd}) => {
             <h1>{detalle.tittle}</h1>
             <img className="card-img-top" src={img} alt="imagenmodel"></img>
             <p>{detalle.description}</p>
-            <p>Stock: {detalle.stockQ} unidades</p>
             <p>Precio: {detalle.price} USD</p>
-            <ItemCount items= {detalle.items} stockQ = {detalle.stockQ}/>
+            <p>Stock: {detalle.stockQ} unidades</p>
+            <ItemCount onAdd = {onAdd} items= {detalle.items} stockQ = {detalle.stockQ}/>
             {/* <link to='/cart'> 
                 <button onAdd={onAdd} className="btn btn-outline-warning rounded-pill">Comprar</button>
             </link> */}
