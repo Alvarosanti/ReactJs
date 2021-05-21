@@ -20,19 +20,23 @@ export const App = () => {
           <NavBar/>
           <Switch>
             <Route path='/home'>
-              <Home/>
+            <ItemListContainer/>
+
+              {/* <Home/> */}
             </Route>
             <Route  path='/item/:id'>
               <ItemDetailContainer/>
             </Route>
-            <Route  path='/catalogo'>
+            {/* <Route  path='/catalogo'>
               <ItemListContainer/>
-            </Route>
+            </Route> */}
             <Route  path='/cart'>
               <Cart/>
             </Route>
             <Route path='/'>
-              <Home/>
+            <ItemListContainer/>
+
+              {/* <Home/> */}
             </Route>
           </Switch>
           <Footer/>

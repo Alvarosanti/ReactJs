@@ -1,106 +1,127 @@
 import React from 'react';
-import {useCartContext} from './CartContext'
+import { Link } from 'react-router-dom';
+import { useCartContext } from './CartContext';
 
 const Cart = () => {
-    const {items, removeItem, clearItems, total} = useCartContext();
-    console.log('cart items: raa',items);
-    
+	const { items, removeItem, clearItems, total } = useCartContext();
+	console.log('cart items: raa', items);
+
 	return (
 		<div>
-			<body>
-				<main class="page">
-					<section class="shopping-cart dark">
+			{items.map((x) => (
+				<div class="px-4 px-lg-0">
+					<div class="container text-white py-5 text-center">
+						<h1 class="display-4">Shopping Cart</h1>
+						<p class="lead mb-0">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec
+							auctor in, mattis vitae leo.
+						</p>
+					</div>
+
+					<div class="pb-5">
 						<div class="container">
-							<div class="block-heading">
-								<h2>Shopping Cart</h2>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim
-									nec auctor in, mattis vitae leo.
-								</p>
-							</div>
-							<div class="content">
-								<div class="row">
-									<div class="col-md-12 col-lg-8">
-										<div class="items">
-											<div class="product">
-												<div class="row">
-													<div class="col-md-3">
-														<img
-															class="img-fluid mx-auto d-block image"
-															src="assets/img/image.jpg"
-														/>
-													</div>
-													<div class="col-md-8">
-														<div class="info">
-															<div class="row">
-																<div class="col-md-5 product-name">
-																	<div class="product-name">
-																		<a href="#">Lorem Ipsum dolor</a>
-																		<div class="product-info">
-																			<div>
-																				Display:{' '}
-																				<span class="value">5 inch</span>
-																			</div>
-																			<div>
-																				RAM: <span class="value">4GB</span>
-																			</div>
-																			<div>
-																				Memory: <span class="value">32GB</span>
-																			</div>
-																		</div>
-																	</div>
-																</div>
-																<div class="col-md-4 quantity">
-																	<label for="quantity">Quantity:</label>
-																	<input
-																		id="quantity"
-																		type="number"
-																		value="1"
-																		class="form-control quantity-input"
-																	/>
-																</div>
-																<div class="col-md-3 price">
-																	<span>$120</span>
-																</div>
+							<div class="row">
+								<div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
+									<div class="table-responsive">
+										<table class="table">
+											<thead>
+												<tr>
+													<th scope="col" class="border-0 bg-light">
+														<div class="p-2 px-3 text-uppercase">Product</div>
+													</th>
+													<th scope="col" class="border-0 bg-light">
+														<div class="py-2 text-uppercase">Price</div>
+													</th>
+													<th scope="col" class="border-0 bg-light">
+														<div class="py-2 text-uppercase">Quantity</div>
+													</th>
+													<th scope="col" class="border-0 bg-light">
+														<div class="py-2 text-uppercase">Remove</div>
+													</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th scope="row" class="border-0">
+														<div class="p-2">
+															<div class="col-md-3">
+																<img
+																	class="img-fluid mx-auto d-block image"
+																	src={x.pictures}
+																/>
+															</div>
+															<div class="ml-3 d-inline-block align-middle">
+																<h5 class="mb-0">
+																	<a class="text-dark d-inline-block align-middle">
+																		<Link to={`/item/${x.id}`}>
+																			{x.description}
+																		</Link>
+																	</a>
+																</h5>
+																<span class="text-muted font-weight-normal font-italic d-block">
+																	Category: ...
+																</span>
 															</div>
 														</div>
-													</div>
-												</div>
-											</div>
-										</div>
+													</th>
+													<td class="border-0 align-middle">
+														<strong>{x.price}&#36;</strong>
+													</td>
+													<td class="border-0 align-middle">
+														<strong>{x.cant}</strong>
+													</td>
+													<td class="border-0 align-middle">
+														<a href="#" class="text-dark">
+															<i class="fa fa-trash" />
+														</a>
+													</td>
+												</tr>
+											</tbody>
+										</table>
 									</div>
-									<div class="col-md-12 col-lg-4">
-										<div class="summary">
-											<h3>Summary</h3>
-											<div class="summary-item">
-												<span class="text">Subtotal</span>
-												<span class="price">$360</span>
-											</div>
-											<div class="summary-item">
-												<span class="text">Discount</span>
-												<span class="price">$0</span>
-											</div>
-											<div class="summary-item">
-												<span class="text">Shipping</span>
-												<span class="price">$0</span>
-											</div>
-											<div class="summary-item">
-												<span class="text">Total</span>
-												<span class="price">$360</span>
-											</div>
-											<button type="button" class="btn btn-primary btn-lg btn-block">
-												Checkout
-											</button>
-										</div>
+								</div>
+							</div>
+
+							<div class="row py-5 p-4 bg-white rounded shadow-sm">
+								<div class="col-lg-12">
+									<div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">
+										Order summary{' '}
+									</div>
+									<div class="p-4">
+										<p class="font-italic mb-4">
+											Shipping and additional costs are calculated based on values you have
+											entered.
+										</p>
+										<ul class="list-unstyled mb-4">
+											<li class="d-flex justify-content-between py-3 border-bottom">
+												<strong class="text-muted">Order Subtotal </strong>
+												<strong>$390.00</strong>
+											</li>
+											<li class="d-flex justify-content-between py-3 border-bottom">
+												<strong class="text-muted">Shipping and handling</strong>
+												<strong>$10.00</strong>
+											</li>
+											<li class="d-flex justify-content-between py-3 border-bottom">
+												<strong class="text-muted">Tax</strong>
+												<strong>$0.00</strong>
+											</li>
+											<li class="d-flex justify-content-between py-3 border-bottom">
+												<strong class="text-muted">Total</strong>
+												<h5 class="font-weight-bold">$400.00</h5>
+											</li>
+										</ul>
+										<a href="#" class="btn btn-dark rounded-pill py-2 btn-block">
+											Procceed to checkout
+										</a>
 									</div>
 								</div>
 							</div>
 						</div>
-					</section>
-				</main>
-			</body>
+					</div>
+				</div>
+			))}
 		</div>
-	)
-}
+	);
+};
 
 export default Cart;
