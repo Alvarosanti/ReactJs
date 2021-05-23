@@ -1,6 +1,7 @@
 import React from 'react'
 import { CartWidget } from './CartWidget.js'
 import { Dropdown } from 'react-bootstrap';
+import {Link, NavLink} from 'react-router-dom';
 
 export const NavBar = () => {
     return(
@@ -13,7 +14,7 @@ export const NavBar = () => {
                     <a className="navbar-brand" href="/home">Lamps</a>
                     <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li className="nav-item active">
-                        <a className="nav-link" href="/home">Home <span className="sr-only">(current)</span></a>
+                        <NavLink to='/'><a className="nav-link" >Home <span className="sr-only"></span></a></NavLink>
                     </li>
                     {/* <li className="nav-item">
                         <a className="nav-link" href="/catalogo">Catalogo</a>

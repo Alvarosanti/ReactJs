@@ -3,6 +3,7 @@ import Detail from './Detail'
 import { useParams } from 'react-router-dom';
 import { useCartContext} from '../components/CartContext'
 import {Link} from 'react-router-dom';
+import {getFirebase} from '../firebase'
 
 const ItemDetailContainer = () => {
     
@@ -104,9 +105,9 @@ const ItemDetailContainer = () => {
                 <div className="col-lg-6 shop-info-grid mt-5">
                     <div className="row">    
                     <Detail onAdd={onAdd} detalle = {dataSet} />
-                    <Link to={"/cart"}>
+                    {/* <Link to={"/cart"}>
                         <button>Terminar Agregar al carrito</button>
-                    </Link>
+                    </Link> */}
                     </div>
                 </div>
             }

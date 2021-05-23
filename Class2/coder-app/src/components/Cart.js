@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 import { useCartContext } from './CartContext';
 
 const Cart = () => {
-	const { items, removeItem, clearItems, total } = useCartContext();
+	const { items, removeItem, clearItems, precioTotal } = useCartContext();
 	console.log('cart items: raa', items);
 
 	return (
 		<div>
-			{items.map((x) => (
 				<div class="px-4 px-lg-0">
 					<div class="container text-white py-5 text-center">
 						<h1 class="display-4">Shopping Cart</h1>
@@ -25,6 +24,7 @@ const Cart = () => {
 									<div class="table-responsive">
 										<table class="table">
 											<thead>
+
 												<tr>
 													<th scope="col" class="border-0 bg-light">
 														<div class="p-2 px-3 text-uppercase">Product</div>
@@ -39,8 +39,10 @@ const Cart = () => {
 														<div class="py-2 text-uppercase">Remove</div>
 													</th>
 												</tr>
+
 											</thead>
 											<tbody>
+											{items.map((x) => (
 												<tr>
 													<th scope="row" class="border-0">
 														<div class="p-2">
@@ -64,18 +66,23 @@ const Cart = () => {
 															</div>
 														</div>
 													</th>
+													{/* precio unitario */}
 													<td class="border-0 align-middle">
 														<strong>{x.price}&#36;</strong>
 													</td>
+													{/* cantidad unitaria */}
 													<td class="border-0 align-middle">
 														<strong>{x.cant}</strong>
 													</td>
+													{/* remove icon */}
 													<td class="border-0 align-middle">
-														<a href="#" class="text-dark">
+													{/* Style=(pointer{cursor: pointer;} */}
+														<a  onClick={()=>removeItem(x.id)} class="text-dark">
 															<i class="fa fa-trash" />
 														</a>
 													</td>
 												</tr>
+												))}
 											</tbody>
 										</table>
 									</div>
@@ -95,11 +102,11 @@ const Cart = () => {
 										<ul class="list-unstyled mb-4">
 											<li class="d-flex justify-content-between py-3 border-bottom">
 												<strong class="text-muted">Order Subtotal </strong>
-												<strong>$390.00</strong>
+												<strong>${precioTotal()}</strong>
 											</li>
 											<li class="d-flex justify-content-between py-3 border-bottom">
 												<strong class="text-muted">Shipping and handling</strong>
-												<strong>$10.00</strong>
+												<strong>Free</strong>
 											</li>
 											<li class="d-flex justify-content-between py-3 border-bottom">
 												<strong class="text-muted">Tax</strong>
@@ -107,7 +114,7 @@ const Cart = () => {
 											</li>
 											<li class="d-flex justify-content-between py-3 border-bottom">
 												<strong class="text-muted">Total</strong>
-												<h5 class="font-weight-bold">$400.00</h5>
+												<h5 class="font-weight-bold">${precioTotal()}</h5>
 											</li>
 										</ul>
 										<a href="#" class="btn btn-dark rounded-pill py-2 btn-block">
@@ -119,7 +126,6 @@ const Cart = () => {
 						</div>
 					</div>
 				</div>
-			))}
 		</div>
 	);
 };

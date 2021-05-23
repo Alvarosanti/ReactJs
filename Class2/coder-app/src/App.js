@@ -22,7 +22,7 @@ export const App = () => {
             <Route path='/home'>
             <ItemListContainer/>
 
-              {/* <Home/> */}
+              {/* <Home/> */} 
             </Route>
             <Route  path='/item/:id'>
               <ItemDetailContainer/>

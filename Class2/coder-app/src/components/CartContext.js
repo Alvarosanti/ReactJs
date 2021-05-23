@@ -19,7 +19,7 @@ export function CartContext1({children}) {
           console.log(dataSet)
         }
         else{
-          if(items.length < dataSet.stockQ){
+          if(items.length < 10){
             setItems([...items, {...dataSet, cant: count}]);
           }
         }
@@ -46,11 +46,28 @@ export function CartContext1({children}) {
           }  
       })
       setItems(filtro);
+      console.log('filtro cart context',filtro);
+    }
+
+    function precioTotal(){
+      const ptotal = items.reduce((a,b) => (a+(b.price * b.cant)),0)
+      return ptotal;
+    }
+
+    const removeItem = (item) =>{
+      const itemInCart = items.filter(x => x.id !== item);
+      setItems(itemInCart);
+
+    }
+
+    function counterCartItem(){
+      const unid = items.reduce((a,b)=>(a + b.cant),0)
+      return unid;
     }
 
     return (
         <div>
-            <CartContext.Provider value={{items , addItems,vacio}}>
+            <CartContext.Provider value={{items , addItems,vacio,precioTotal,removeItem,counterCartItem}}>
                 {children}
             </CartContext.Provider>
         </div>
