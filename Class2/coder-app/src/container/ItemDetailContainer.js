@@ -12,21 +12,49 @@ const ItemDetailContainer = () => {
     const {addItems,items} = useCartContext()
     
     console.log('id prop idetailcontainer: ',id);
-    
+    console.log('dataset in item detail container js',dataSet,'----------------')
+    // useEffect(()=>{
+    //     const db = getFirestore();
+    //     const itemsCollection = db.collection("items");
+    //     itemsCollection.get()
+    //         .then((querySnapshot)=>{
+    //             querySnapshot.size == 0 ? console.log("no hay items") : console.log(`hay ${querySnapshot.size} items`);
+    //             const documentos = querySnapshot.docs.map((doc)=>doc.data());
+    //             console.log('docs',documentos);
+    //             setData(documentos);
+    //         })
+    //         .catch((err) => console.log("error",err))
+    //         .finally(() => console.log("finally"));
+    //     },[id]);
+       
     useEffect(()=>{
         const db = getFirestore();
         const itemsCollection = db.collection("items");
-        itemsCollection.get()
+        const itemDetail = itemsCollection.doc(id);
+        // const itemsFiltered = itemsCollection.where('price','>',30);
+        console.log('item detail container id', itemDetail);
+        itemDetail.get()
             .then((querySnapshot)=>{
                 querySnapshot.size == 0 ? console.log("no hay items") : console.log(`hay ${querySnapshot.size} items`);
-                const documentos = querySnapshot.docs.map((doc)=>doc.data());
-                console.log('docs',documentos);
+                // const documentos = itemDetail.docs.map((doc)=>{
+                //     console.log('docs',doc);
+                //     // guarda el estado local con el id random
+                //     return {
+                //         id: doc.id,
+                //         ...doc.data()
+                //     }
+                // });
+                const documentos = {
+                    id: querySnapshot.id,
+                    ...querySnapshot.data()
+                }
                 setData(documentos);
+                console.log('documentos',documentos);
             })
             .catch((err) => console.log("error",err))
             .finally(() => console.log("finally"));
         },[id]);
-       
+
         const onAdd = (count) => {
             addItems(count,dataSet)
         }

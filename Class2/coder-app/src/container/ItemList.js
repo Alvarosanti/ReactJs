@@ -3,6 +3,7 @@ import Item from './Item';
 
 
 const ItemList = ({productos}) =>{
+    console.log('products in item list js',productos)
     return(
         <>
          <div className="container text-center mt-5"> 
