@@ -121,7 +121,7 @@ const Cart = () => {
 												<h5 class="font-weight-bold">${precioTotal()}</h5>
 											</li>
 										</ul>
-										<a href="#" class="btn btn-dark rounded-pill py-2 btn-block">
+										<a href="#" class="btn btn-dark rounded-p2 py-2 btn-block">
 											Procceed to checkout
 										</a>
 									</div>
