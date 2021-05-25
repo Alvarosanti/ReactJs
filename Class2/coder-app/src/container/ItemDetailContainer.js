@@ -6,9 +6,11 @@ import {Link} from 'react-router-dom';
 import {getFirebase, getFirestore} from '../firebase'
 
 const ItemDetailContainer = () => {
-    
+    // salva y setea data
     const[dataSet,setData] = useState({});
+    // devuelve un array de la variable id
     const {id} = useParams(); 
+    // trae data del cartcontext
     const {addItems,items} = useCartContext()
     
     console.log('id prop idetailcontainer: ',id);

@@ -1,5 +1,6 @@
 import React,{useState,useEffect,useContext }from 'react'
 
+
 export const CartContext = React.createContext([]);
 
 export const useCartContext = () => useContext(CartContext);
@@ -65,11 +66,20 @@ export function CartContext1({children}) {
       return unid;
     }
 
+    function cartEmpty(item){
+      if(item.length == 0){
+        console.log('Items del carrito pasando a cart',item.length)
+        return item.length;
+      }
+    }
+
     return (
         <div>
-            <CartContext.Provider value={{items , addItems,vacio,precioTotal,removeItem,counterCartItem}}>
+          {
+            <CartContext.Provider value={{items , addItems,vacio,precioTotal,removeItem,counterCartItem,cartEmpty}}>
                 {children}
             </CartContext.Provider>
+          }
         </div>
     )
 }

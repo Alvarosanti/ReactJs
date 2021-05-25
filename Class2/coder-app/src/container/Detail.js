@@ -16,6 +16,7 @@ const Detail = ({detalle,items,onAdd}) => {
             {/* <link to='/cart'> 
                 <button onAdd={onAdd} className="btn btn-outline-warning rounded-pill">Comprar</button>
             </link> */}
+            
         </div>
     )
 }

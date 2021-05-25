@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom';
 import { useCartContext } from './CartContext';
 
 const Cart = () => {
-	const { items, removeItem, clearItems, precioTotal } = useCartContext();
+	const { items, removeItem, clearItems, precioTotal ,cartEmpty} = useCartContext();
 	console.log('cart items: raa', items);
+	console.log('cart items: raa', items.length);
+	console.log('cart items: raa', cartEmpty);
 
+	
 	return (
 		<div>
 				<div class="px-4 px-lg-0">
-					<div class="container text-white py-5 text-center">
+					<div class="container text-black py-5 text-center">
 						<h1 class="display-4">Shopping Cart</h1>
 						<p class="lead mb-0">
 							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec
@@ -21,7 +24,7 @@ const Cart = () => {
 						<div class="container">
 							<div class="row">
 								<div class="col-lg-12 p-5 bg-white rounded shadow-sm mb-5">
-									<div class="table-responsive">
+									<div id="cartTable" class="table-responsive">
 										<table class="table">
 											<thead>
 
@@ -54,14 +57,15 @@ const Cart = () => {
 															</div>
 															<div class="ml-3 d-inline-block align-middle">
 																<h5 class="mb-0">
-																	<a class="text-dark d-inline-block align-middle">
-																		<Link to={`/item/${x.id}`}>
+																	<a >
+																		<Link class="text-dark d-inline-block align-middle" to={`/item/${x.id}`}>
 																			{x.description}
 																		</Link>
 																	</a>
 																</h5>
 																<span class="text-muted font-weight-normal font-italic d-block">
-																	Category: ...
+																	Category: <Link class="text-dark" to={`/category/${x.categoryId}`}>{x.categoryId}</Link>
+																	
 																</span>
 															</div>
 														</div>

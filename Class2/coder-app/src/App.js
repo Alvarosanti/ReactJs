@@ -7,6 +7,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import ItemDetailContainer from './container/ItemDetailContainer';
 import Home from './components/Home';
 import Cart from './components/Cart';
+import CartEmpty from './components/CartEmpty';
 import {CartContext1} from './components/CartContext';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,23 +21,22 @@ export const App = () => {
           <NavBar/>
           <Switch>
             <Route path='/home'>
-            <ItemListContainer/>
-
-              {/* <Home/> */} 
+              <ItemListContainer/>
+            </Route>
+            <Route  path='/category/:id'>
+              <ItemListContainer/>
             </Route>
             <Route  path='/item/:id'>
               <ItemDetailContainer/>
             </Route>
-            {/* <Route  path='/catalogo'>
-              <ItemListContainer/>
-            </Route> */}
             <Route  path='/cart'>
               <Cart/>
             </Route>
+            <Route  path='/cartEmpty'>
+              <CartEmpty/>
+            </Route>
             <Route path='/'>
-            <ItemListContainer/>
-
-              {/* <Home/> */}
+             <ItemListContainer/>
             </Route>
           </Switch>
           <Footer/>
