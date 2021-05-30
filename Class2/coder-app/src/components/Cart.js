@@ -81,7 +81,7 @@ const Cart = () => {
 													{/* remove icon */}
 													<td class="border-0 align-middle">
 													{/* Style=(pointer{cursor: pointer;} */}
-														<a  onClick={()=>removeItem(x.id)} class="text-dark">
+														<a Style="cursor:pointer" onClick={()=>removeItem(x.id)} class="text-dark">
 															<i class="fa fa-trash" />
 														</a>
 													</td>
@@ -121,9 +121,7 @@ const Cart = () => {
 												<h5 class="font-weight-bold">${precioTotal()}</h5>
 											</li>
 										</ul>
-										<a href="#" class="btn btn-dark rounded-p2 py-2 btn-block">
-											Procceed to checkout
-										</a>
+										<Link to={"/login"} class="btn btn-dark rounded-p2 py-2 btn-block">Procceed to checkout </Link>
 									</div>
 								</div>
 							</div>

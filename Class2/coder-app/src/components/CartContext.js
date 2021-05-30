@@ -1,6 +1,5 @@
 import React,{useState,useEffect,useContext }from 'react'
 
-
 export const CartContext = React.createContext([]);
 
 export const useCartContext = () => useContext(CartContext);
@@ -9,6 +8,7 @@ export const useCartContext = () => useContext(CartContext);
 export function CartContext1({children}) {
     const [items, setItems] = useState([]);
     const [vacio, setVacio]= useState(false);
+    const [user,setUser] = useState();
 
     useEffect(() => {
 
@@ -72,6 +72,8 @@ export function CartContext1({children}) {
         return item.length;
       }
     }
+
+   
 
     return (
         <div>
