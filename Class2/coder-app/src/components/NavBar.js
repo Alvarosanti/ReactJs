@@ -3,8 +3,6 @@ import { CartWidget } from './CartWidget.js'
 import { Dropdown } from 'react-bootstrap';
 import {Link, NavLink} from 'react-router-dom';
 
-
-
 export const NavBar = () => {
     return(
             <>

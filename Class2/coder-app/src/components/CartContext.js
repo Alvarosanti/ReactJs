@@ -66,19 +66,10 @@ export function CartContext1({children}) {
       return unid;
     }
 
-    function cartEmpty(item){
-      if(item.length == 0){
-        console.log('Items del carrito pasando a cart',item.length)
-        return item.length;
-      }
-    }
-
-   
-
     return (
         <div>
           {
-            <CartContext.Provider value={{items , addItems,vacio,precioTotal,removeItem,counterCartItem,cartEmpty}}>
+            <CartContext.Provider value={{items , addItems,vacio,precioTotal,removeItem,counterCartItem}}>
                 {children}
             </CartContext.Provider>
           }

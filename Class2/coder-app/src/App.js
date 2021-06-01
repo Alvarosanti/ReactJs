@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Cart from './components/Cart';
 import Login from './container/Login'
 import CartEmpty from './components/CartEmpty';
+import CheckOut from './container/Checkout'
 import {CartContext1} from './components/CartContext';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -35,6 +36,9 @@ export const App = () => {
             </Route>
             <Route  path='/login'>
               <Login/>
+            </Route>
+            <Route  path='/checkout'>
+              <CheckOut/>
             </Route>
             <Route  path='/cartEmpty'>
               <CartEmpty/>

@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 import { useCartContext } from './CartContext';
 
 const Cart = () => {
-	const { items, removeItem, clearItems, precioTotal ,cartEmpty} = useCartContext();
+	const { items, removeItem, clearItems, precioTotal } = useCartContext();
 	console.log('cart items: raa', items);
 	console.log('cart items: raa', items.length);
-	console.log('cart items: raa', cartEmpty);
-
 	
 	return (
 		<div>
@@ -95,7 +93,7 @@ const Cart = () => {
 
 							<div class="row py-5 p-4 bg-white rounded shadow-sm">
 								<div class="col-lg-12">
-									<div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">
+									<div class="bg-light rounded-p2 px-4 py-3 text-uppercase font-weight-bold">
 										Order summary{' '}
 									</div>
 									<div class="p-4">
@@ -121,7 +119,7 @@ const Cart = () => {
 												<h5 class="font-weight-bold">${precioTotal()}</h5>
 											</li>
 										</ul>
-										<Link to={"/login"} class="btn btn-dark rounded-p2 py-2 btn-block">Procceed to checkout </Link>
+										<Link to={"/checkout"} class="btn btn-dark rounded-p2 py-2 btn-block">Procceed to checkout </Link>
 									</div>
 								</div>
 							</div>
