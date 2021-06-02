@@ -1,25 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import '../container/login2.css';
 import { Link, Route } from 'react-router-dom';
 import { useCartContext } from '../components/CartContext';
+import { getFirestore } from '../firebase';
+import firebase from 'firebase/app';
 
 function Checkout() {
-	const { items, removeItem, clearItems, precioTotal } = useCartContext();
-	const [ usuario, setUsuario ] = useState([]);
-	const handleInputChange = (e) => {
-		const target = e.target;
-		const value = target.value;
-		const name = target.name;
-		console.log(name, 'data user', value);
-		setUsuario({
-			[name]: value
-		});
-		console.log('data usuario obj', e);
-	};
+	const { items, precioTotal } = useCartContext();
+	const [ order, setOrder ] = useState({});
+	const [ nameUsr ,setNameUsr] = useState('');
+	const [ lastNameUsr ,setLastNameUsr] = useState('');
+	const [ emailUsr ,setEmailUsr] = useState('');
+	const [ DniUsr ,setDniUsr] = useState('');
+	const totalAPagar = precioTotal();
+
+	const db = getFirestore();
+	const orders = db.collection("orders");
+
+	const handleCompra = () =>{
+		let order = {
+			buyer:{
+				name:nameUsr,
+				lastName:lastNameUsr,
+				email:emailUsr,
+				dni:DniUsr
+			},
+			items,
+			totalAPagar,
+			date: firebase.firestore.Timestamp.fromDate(new Date())
+		}
+		items.length && setOrder(order);
+		console.log('data usuario in handlecompra', order);
+	}
+	
+	useEffect(() =>{
+		if(order.items){
+			orders.add(order)
+			.then((id)=>{console.log('id en then,',id)})
+			.catch((err)=>{console.log('err: ',err)})
+		}
+	},[order]);
+
 	return (
 		<div>
 			<div class="container py-5">
 				<div class="row mb-5">
+					{/* encabezado principal*/}
 					<div class="col-lg-8 text-black py-4 text-center mx-auto">
 						<h1 class="display-4">Check Out</h1>
 						<p class="lead mb-0">Estas a punto de finalizar tu compra.</p>
@@ -32,11 +58,13 @@ function Checkout() {
 						role="tablist"
 						class="nav nav-tabs nav-pills with-arrow lined flex-column flex-sm-row text-center">
 						<li class="nav-item flex-sm-fill">
+							{/* titulo encabezado detalle orden */}
 							<div class="bg-light rounded-p2 px-4 py-3 text-uppercase font-weight-bold">
 								detalle de tu pedido{' '}
 							</div>
 						</li>
 					</ul>
+					{/* tabla detalle de los productos */}
 						<div id="cartTable" class="table-responsive">
 							<table class="table">
 								<thead>
@@ -52,6 +80,7 @@ function Checkout() {
 										</th>
 									</tr>
 								</thead>
+								{/* muestra items del carrito */}
 								<tbody>
 									{items.map((x) => (
 										<tr>
@@ -90,14 +119,14 @@ function Checkout() {
 								</div>
 						</div>
 					</div>
-                    
 				</div>
-                
+                {/* datos del cliente */}
 				<div class="row py-5 p-4 bg-white rounded shadow-sm">
 					<ul
 						id="myTab2"
 						role="tablist"
 						class="nav nav-tabs nav-pills with-arrow lined flex-column flex-sm-row text-center">
+						{/* titulo encabezado area datos cliente */}
 						<li class="nav-item flex-sm-fill">
 							<div class="bg-light rounded-p2 px-4 py-3 text-uppercase font-weight-bold">
 								datos personales{' '}
@@ -107,14 +136,14 @@ function Checkout() {
 					<div id="myTab2Content" class="tab-content">
 						{/* tab create user order */}
 						<div id="profile2" role="tabpanel" aria-labelledby="profile-tab" class=" px-4 py-5">
-							<form>
+							<form >
 								<div class="form-row">
 									<div class="form-group col-md-6">
 										<input
 											type="text"
 											class="form-control"
 											name="name"
-											onChange={handleInputChange}
+											onChange={(val)=>{setNameUsr(val.target.value)}}
 											placeholder="Nombres"
 										/>
 									</div>
@@ -123,7 +152,7 @@ function Checkout() {
 											type="text"
 											class="form-control"
 											name="lastname"
-											onChange={handleInputChange}
+											onChange={(val)=>{setLastNameUsr(val.target.value)}}
 											placeholder="Apellidos"
 										/>
 									</div>
@@ -132,7 +161,7 @@ function Checkout() {
 											type="text"
 											class="form-control"
 											name="email"
-											onChange={handleInputChange}
+											onChange={(val)=>{setEmailUsr(val.target.value)}}
 											placeholder="Email"
 										/>
 									</div>
@@ -141,12 +170,12 @@ function Checkout() {
 											type="text"
 											class="form-control"
 											name="dni"
-											onChange={handleInputChange}
+											onChange={(val)=>{setDniUsr(val.target.value)}}
 											placeholder="Dni"
 										/>
 									</div>
 									<div class="col-md-12">
-										<Link to={'/checkout'} class="btn btn-dark rounded-p2 btn-block">
+										<Link onClick={handleCompra} to={'/checkout'} class="btn btn-dark rounded-p2 btn-block">
 												Terminar compra
 										</Link>
 										{/* btn btn-primary */}
