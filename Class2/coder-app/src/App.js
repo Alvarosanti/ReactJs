@@ -9,7 +9,8 @@ import Home from './components/Home';
 import Cart from './components/Cart';
 import Login from './container/Login'
 import CartEmpty from './components/CartEmpty';
-import CheckOut from './container/Checkout'
+import CheckOut from './container/Checkout';
+import Confirm from './components/Confirm';
 import {CartContext1} from './components/CartContext';
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,22 +26,25 @@ export const App = () => {
             <Route path='/home'>
               <ItemListContainer/>
             </Route>
-            <Route  path='/category/:id'>
+            <Route path='/category/:id'>
               <ItemListContainer/>
             </Route>
-            <Route  path='/item/:id'>
+            <Route path='/item/:id'>
               <ItemDetailContainer/>
             </Route>
-            <Route  path='/cart'>
+            <Route path='/cart'>
               <Cart/>
             </Route>
-            <Route  path='/login'>
+            <Route path='/login'>
               <Login/>
             </Route>
-            <Route  path='/checkout'>
+            <Route path='/checkout'>
               <CheckOut/>
             </Route>
-            <Route  path='/cartEmpty'>
+            <Route path='/confirm'>
+              <Confirm/>
+            </Route>
+            <Route path='/cartEmpty'>
               <CartEmpty/>
             </Route>
             <Route path='/'>
