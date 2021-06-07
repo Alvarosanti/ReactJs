@@ -6,15 +6,17 @@ import { useParams } from 'react-router-dom';
 
 function Confirm() {
 
-    const { items, precioTotal } = useCartContext();
+    const { items, precioTotal,dataUsr,orderId } = useCartContext();
 
     return (
-        <div class="container py-5">
+        <div key={items.id} class="container py-5">
         <div class="row mb-5">
             {/* encabezado principal*/}
             <div class="col-lg-8 text-black py-4 text-center mx-auto">
-                <h1 class="display-4">Confirm</h1>
-                <p class="lead mb-0">Gracias, su orden ha sido procesada.</p>
+                <h1 class="display-4">Confirmacion</h1>
+                <p class="lead mb-0">Gracias {dataUsr.name}, su orden ha sido procesada,</p>
+                <p class="lead mb-0">Su NO de seguimiento es {orderId}</p>
+                <p class="lead mb-0">Se te envio el detalle de tu  otden a tu correo, {dataUsr.email}</p>
             </div>
         </div>
         <div class="row">

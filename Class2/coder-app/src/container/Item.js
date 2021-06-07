@@ -13,8 +13,7 @@ const Item = ({id,tittle,description,price,stockQ,items}) =>{
                     <p className="card-text text-bg-primary">{description}</p>
                     <p className="card-text text-secondary">Stock: {stockQ} unidades</p>
                     <p className="card-text">Precio: {price} USD</p>
-                    <Link className="btn btn-dark rounded-p2 py-2 btn-block" to={`/item/${id}`}>Detalles</Link>
-                
+                    <Link to={`/item/${id}`} className="btn btn-dark rounded-p2 py-2 btn-block">Detalles</Link>
                 </div>
             </div>
     )

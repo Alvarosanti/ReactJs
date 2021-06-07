@@ -4,7 +4,7 @@ import Login from './Login'
 
 const ProcceedCheckoutContainer = () => {
     const {items, precioTotal} = useCartContext();
-    const [usuarioCompra, setUsuarioCompra] = useState({nombres:'',apellidos,email,contrasena,dni});
+    const [usuarioCompra, setUsuarioCompra] = useState({nombres:'',apellidos,email,dni});
 
     function dataUser(e){
         let u ;

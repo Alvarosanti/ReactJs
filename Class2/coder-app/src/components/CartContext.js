@@ -1,5 +1,6 @@
 import React,{useState,useEffect,useContext }from 'react'
-
+import { getFirestore } from '../firebase';
+import firebase from 'firebase/app';
 export const CartContext = React.createContext([]);
 
 export const useCartContext = () => useContext(CartContext);
@@ -8,8 +9,9 @@ export const useCartContext = () => useContext(CartContext);
 export function CartContext1({children}) {
     const [items, setItems] = useState([]);
     const [vacio, setVacio]= useState(false);
-    const [user,setUser] = useState();
-
+    const [orderId,setOrderId] = useState('');
+    const [ dataUsr ,setDataUsr] = useState({name:'',lastname:'',email:'',dni:''});
+    const totalAPagar = precioTotal();
     useEffect(() => {
 
     }, [items])
@@ -66,10 +68,37 @@ export function CartContext1({children}) {
       return unid;
     }
 
+    function onChangeDato(e){
+      e.preventDefault();
+      setDataUsr({
+          ...dataUsr,
+          [e.target.name]:e.target.value
+      });
+  }
+    const onSubmit = ()=> {
+      handleCompra()
+  console.log('data usuario in onsubmit');
+  
+}
+  async function handleCompra(){
+      const db = getFirestore();
+      const orders = db.collection("orders");
+      console.log('in handle compra checkoutcontainer')
+  const order = {
+    buyer:[dataUsr],
+    items,
+    totalAPagar,
+    date: firebase.firestore.Timestamp.fromDate(new Date())
+  }
+      // items.length && setOrder(order);
+    orders.add(order)
+    .then((order)=>{setOrderId(order.id)})
+    
+  }
     return (
         <div>
           {
-            <CartContext.Provider value={{items , addItems,vacio,precioTotal,removeItem,counterCartItem}}>
+            <CartContext.Provider value={{items , addItems,vacio,precioTotal,removeItem,counterCartItem,onSubmit,onChangeDato,dataUsr,orderId}}>
                 {children}
             </CartContext.Provider>
           }

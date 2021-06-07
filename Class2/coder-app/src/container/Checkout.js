@@ -2,52 +2,14 @@ import React, { useState,useEffect} from 'react';
 import '../container/login2.css';
 import { Link, Route } from 'react-router-dom';
 import { useCartContext } from '../components/CartContext';
-import { getFirestore } from '../firebase';
-import firebase from 'firebase/app';
-import { render } from '@testing-library/react';
+import { isCompositeComponent } from 'react-dom/test-utils';
 
-function Checkout() {
-	const { items, precioTotal } = useCartContext();
+function Checkout () {
+	const { items, precioTotal,onSubmit ,onChangeDato} = useCartContext();
 	const [ order, setOrder ] = useState({});
-	const [ nameUsr ,setNameUsr] = useState('');
-	const [ lastNameUsr ,setLastNameUsr] = useState('');
-	const [ emailUsr ,setEmailUsr] = useState('');
-	const [ DniUsr ,setDniUsr] = useState('');
-	const totalAPagar = precioTotal();
-	const db = getFirestore();
-	const orders = db.collection("orders");
-
-	const handleCompra = () =>{
-		let order = {
-			buyer:{
-				name:nameUsr,
-				lastName:lastNameUsr,
-				email:emailUsr,
-				dni:DniUsr
-			},
-			items,
-			totalAPagar,
-			date: firebase.firestore.Timestamp.fromDate(new Date())
-		}
-		items.length && setOrder(order);
-		console.log('data usuario in handlecompra', order);
-		
-		if(order.items){
-			orders.add(order)
-			.then((order)=>{console.log('id order en then,',order.id)})
-			.catch((err)=>{console.log('err: ',err)})
-		}
-	}
-	// useEffect(() =>{
-	// 	if(order.items){
-	// 		orders.add(order)
-	// 		.then((order)=>{console.log('id order en then,',order.id)})
-	// 		.catch((err)=>{console.log('err: ',err)})
-	// 	}
-	// },[]);
-		
-	
-		return (
+// console.log('onchange dato',onChangeDato)
+	return (
+		<>
 			<div>
 				<div class="container py-5">
 					<div class="row mb-5">
@@ -142,33 +104,22 @@ function Checkout() {
 						<div id="myTab2Content" class="tab-content">
 							{/* tab create user order */}
 							<div id="profile2" role="tabpanel" aria-labelledby="profile-tab" class=" px-4 py-5">
-								<form >
+							
 									<div class="form-row">
 										<div class="form-group col-md-6">
-											<input
-												type="text"
-												class="form-control"
-												name="name"
-												onChange={(val)=>{setNameUsr(val.target.value)}}
-												placeholder="Nombres"
-											/>
+											<input type="text" class="form-control" name="name" onChange={onChangeDato} placeholder="Nombres" required/>
 										</div>
 										<div class="form-group col-md-6">
-											<input
-												type="text"
-												class="form-control"
-												name="lastname"
-												onChange={(val)=>{setLastNameUsr(val.target.value)}}
-												placeholder="Apellidos"
-											/>
+											<input type="text" class="form-control" name="lastname" onChange={onChangeDato} placeholder="Apellidos" required/>
 										</div>
 										<div class="form-group col-md-6">
 											<input
 												type="text"
 												class="form-control"
 												name="email"
-												onChange={(val)=>{setEmailUsr(val.target.value)}}
+												onChange={onChangeDato}
 												placeholder="Email"
+												required
 											/>
 										</div>
 										<div class="form-group col-md-6">
@@ -176,24 +127,27 @@ function Checkout() {
 												type="text"
 												class="form-control"
 												name="dni"
-												onChange={(val)=>{setDniUsr(val.target.value)}}
+												onChange={onChangeDato}
 												placeholder="Dni"
+												required
 											/>
 										</div>
-										<div class="col-md-12">
-											<Link to={'/confirm'} onClick={handleCompra} class="btn btn-dark rounded-p2 btn-block">
-													Terminar compra
-											</Link>
-											{/* btn btn-primary */}
-										</div>
+										
 									</div>
-								</form>
+								
 							</div>
+						</div>
+						<div class="col-md-12">
+							<Link to={'/confirm'} >
+								<input type="button" onClick={()=>onSubmit()} value="Terminar compra" class="btn btn-dark rounded-p2 btn-block"></input>
+							</Link> 
+							{/* btn btn-primary */}
 						</div>
 					</div>
 				</div>
 			
 			</div>
+			</>
 		);
 }
 
