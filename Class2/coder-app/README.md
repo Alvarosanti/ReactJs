@@ -1,8 +1,9 @@
 #Tienda Lampara Vintage
 Tienda de lampara vintage es un emprendimiento que hoy en dia se encuentra en proceso de estructuracion para lanzarlo al mercado, en esta tienda virtual los usuarios podran consultar mediante un filtro de categorias(dormitorio, salon, terrazas, comedor, baño) para las areas que esten buscando, proximamente estaremos expandiendo para otras areas adicionales, al ingresar te muestra una lista de todos los producto al cual puedes ingresar y consultar el detalle de cada producto, la categoria a la que pertence, te indica el stock de cada producto, el precio por unidad del producto, ademas con botones de compra rapida y otro boton para poder almacenarlo en un carrito para poder seguir agregando diversos productos. Finalmente terminando de seleccionar el producto y terminar la compra se le brindará un numero de seguimiento para cualquir consulta de su producto.
 
-<img src="https://imgflip.com/gif/5d098r" width="40" height="40" />
-<div style="width:360px;max-width:100%;"><div style="height:0;padding-bottom:58.33%;position:relative;"><iframe width="360" height="210" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameBorder="0" src="https://imgflip.com/embed/5d098r"></iframe></div><p><a href="https://imgflip.com/gif/5d098r">via Imgflip</a></p></div>
+
+
+<a href="https://imgflip.com/gif/5d098r"><img src="https://imgflip.com/gif/5d098r"></img></a>
 
 ![https://drive.google.com/file/d/15ca4JyRCZmBknfCn2H5wRQdWVImogZxx/view?usp=sharing](s)
 
