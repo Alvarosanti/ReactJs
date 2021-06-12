@@ -1,3 +1,13 @@
+#Tienda Lampara Vintage
+Tienda de lampara vintage es un emprendimiento que hoy en dia se encuentra en proceso de estructuracion para lanzarlo al mercado, en esta tienda virtual los usuarios podran consultar mediante un filtro de categorias(dormitorio, salon, terrazas, comedor, baño) para las areas que esten buscando, proximamente estaremos expandiendo para otras areas adicionales, al ingresar te muestra una lista de todos los producto al cual puedes ingresar y consultar el detalle de cada producto, la categoria a la que pertence, te indica el stock de cada producto, el precio por unidad del producto, ademas con botones de compra rapida y otro boton para poder almacenarlo en un carrito para poder seguir agregando diversos productos. Finalmente terminando de seleccionar el producto y terminar la compra se le brindará un numero de seguimiento para cualquir consulta de su producto.
+
+<img src="https://drive.google.com/file/d/15ca4JyRCZmBknfCn2H5wRQdWVImogZxx/view?usp=sharing" width="40" height="40" />
+
+#Librerias herramientas empleadas
+[Boostrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+[React-Boostrap](ttps://react-bootstrap.github.io/getting-started/introduction)
+[Jquery](https://jquery.com/)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
