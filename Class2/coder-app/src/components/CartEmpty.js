@@ -24,7 +24,7 @@ const CartEmpty = () => {
 											        Empieza a comprar
 										        </a></Link>
                                             </div>
-									</div>
+									</div>d
 								</div>
 							</div>
 						</div>

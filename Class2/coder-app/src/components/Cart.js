@@ -100,10 +100,7 @@ const Cart = () => {
 														))}
 													</tbody>
 											</table>
-															<button
-																onClick={removeAllItems}
-																class="btn btn-dark rounded-p2 py-2 btn-block"
-															>
+															<button onClick={removeAllItems} class="btn btn-dark rounded-p2 py-2 btn-block">
 																Remove All
 															</button>
 										</div>
