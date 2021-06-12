@@ -7,9 +7,17 @@ Tienda de lampara vintage es un emprendimiento que hoy en dia se encuentra en pr
 
 
 # Librerias herramientas empleadas
-[Boostrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
-[React-Boostrap](https://react-bootstrap.github.io/getting-started/introduction)
-[Jquery](https://jquery.com/)
+[1][Boostrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
+[2][React-Boostrap](https://react-bootstrap.github.io/getting-started/introduction)
+[3][Jquery](https://jquery.com/)
+
+
+
+# Instala y prueba el codigo
+[1] git clone https://github.com/Alvarosanti/ReactJs/edit/main/Class2/coder-app
+[2] npm install
+[3] npm start
+[4] Enjoy
 
 # Getting Started with Create React App
 
@@ -58,26 +66,4 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
