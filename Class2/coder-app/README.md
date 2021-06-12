@@ -3,7 +3,7 @@ Tienda de lampara vintage es un emprendimiento que hoy en dia se encuentra en pr
 
 
 
-<a href="https://imgflip.com/gif/5d098r"><img src="https://imgflip.com/gif/5d098r"></img></a>
+<a href="https://im7.ezgif.com/tmp/ezgif-7-b7de91b7e08e.gif"><img src="https://im7.ezgif.com/tmp/ezgif-7-b7de91b7e08e.gif"></img></a>
 
 
 
