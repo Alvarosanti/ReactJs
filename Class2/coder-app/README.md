@@ -3,7 +3,7 @@ Tienda de lampara vintage es un emprendimiento que hoy en dia se encuentra en pr
 
 
 
-
+![](Lamp_House_demo.gif)
 
 
 #Librerias herramientas empleadas
