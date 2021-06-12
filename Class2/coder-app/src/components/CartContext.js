@@ -7,13 +7,16 @@ export const useCartContext = () => useContext(CartContext);
 
 
 export function CartContext1({children}) {
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState(localStorage.getItem('items')
+                                        ? JSON.parse(localStorage.getItem('items'))
+                                        :[]);
     const [vacio, setVacio]= useState(false);
     const [orderId,setOrderId] = useState('');
     const [ dataUsr ,setDataUsr] = useState({name:'',lastname:'',email:'',dni:''});
     const totalAPagar = precioTotal();
     useEffect(() => {
-
+        localStorage.setItem('items',JSON.stringify(items));
+        console.log('items en localstorage',items)
     }, [items])
 
     const addItems = (count, dataSet) => {
@@ -63,6 +66,10 @@ export function CartContext1({children}) {
 
     }
 
+    const removeAllItems = () =>{
+      setItems([])
+    }
+
     function counterCartItem(){
       const unid = items.reduce((a,b)=>(a + b.cant),0)
       return unid;
@@ -77,6 +84,7 @@ export function CartContext1({children}) {
   }
     const onSubmit = ()=> {
       handleCompra()
+   
   console.log('data usuario in onsubmit');
   
 }
@@ -98,7 +106,7 @@ export function CartContext1({children}) {
     return (
         <div>
           {
-            <CartContext.Provider value={{items , addItems,vacio,precioTotal,removeItem,counterCartItem,onSubmit,onChangeDato,dataUsr,orderId}}>
+            <CartContext.Provider value={{items , addItems,vacio,precioTotal,removeItem,counterCartItem,onSubmit,onChangeDato,dataUsr,orderId,removeAllItems}}>
                 {children}
             </CartContext.Provider>
           }

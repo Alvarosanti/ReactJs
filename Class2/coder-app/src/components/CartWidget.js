@@ -17,7 +17,6 @@ export const CartWidget = () =>{
                             <a class="nav-link navbar-link-2 waves-effect"><i class="fas fa-shopping-cart pl-0">{counterCartItem()}</i></a>
                         </NavLink>
                     :
-                    
                         <NavLink to='/cartEmpty'>
                             <a class="nav-link navbar-link-2 waves-effect"><i class="fas fa-shopping-cart pl-0">{counterCartItem()}</i></a>
                         </NavLink>
