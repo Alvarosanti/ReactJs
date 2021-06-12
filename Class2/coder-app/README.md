@@ -8,7 +8,7 @@ Tienda de lampara vintage es un emprendimiento que hoy en dia se encuentra en pr
 
 # Librerias herramientas empleadas
 [Boostrap](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
-[React-Boostrap](ttps://react-bootstrap.github.io/getting-started/introduction)
+[React-Boostrap](https://react-bootstrap.github.io/getting-started/introduction)
 [Jquery](https://jquery.com/)
 
 # Getting Started with Create React App
