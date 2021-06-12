@@ -19,7 +19,7 @@ Tienda de lampara vintage es un emprendimiento que hoy en dia se encuentra en pr
 3. npm start
 4. Enjoy
 
-# Getting Started with Create React App
+# Getting Started with Create React App (documentacion oficial de ReactJs)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
